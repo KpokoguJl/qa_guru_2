@@ -30,8 +30,7 @@ public class HomeWorkTwoTest {
         $("[aria-label='Choose Saturday, January 1st, 2000']").click();
         $("#subjectsInput").setValue("English").pressEnter();
         $x("//label[contains(text(),'Sports')]").click();
-        File file = new File("src/test/testdata/file.txt");
-        $("#uploadPicture").uploadFile(file);
+        $("#uploadPicture").uploadFromClasspath("file.txt");
         $("#currentAddress").setValue(address);
         $x("//div[contains(text(),'Select State')]").click();
         $x("//div[contains(text(),'NCR')]").click();
