@@ -18,8 +18,8 @@ public class HomeWorkTwoTest {
         String phone = "9121111112";
         String address = "Some City, some Street";
 
-        Configuration.browser = OPERA;
         Configuration.browserSize = "1920x1080";
+
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
@@ -27,10 +27,9 @@ public class HomeWorkTwoTest {
         $x("//label[contains(text(),'Male')]").click();
         $("#userNumber").setValue(phone);
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__year-select").click();
-//        $(".react-datepicker__year-select").selectOptionByValue("2010");  //selectOption("2000"); todo Разобраться почему не работает в опере
+        $(".react-datepicker__year-select").selectOption("2000");
         $(".react-datepicker__month-select").selectOption("January");
-        $("[aria-label='Choose Saturday, January 1st, 2000']").click();
+        $("[aria-label$='January 1st, 2000']").click();
         $("#subjectsInput").setValue("English").pressEnter();
         $x("//label[contains(text(),'Sports')]").click();
         $("#uploadPicture").uploadFromClasspath("file.txt");
